@@ -31,5 +31,6 @@ def Backward(t):
 	time.sleep(t)
 	gpio.cleanup()
 
-Forward()
+Forward(5)
+Backward(5)
 
