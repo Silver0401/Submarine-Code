@@ -64,7 +64,7 @@ def Distancia():
 
 	
 while True:
-	if Distancia() < 10:
+	if Distancia() < 10 and Distancia() > 1:
 		Detenerse()
 	else:
 		Forward()
