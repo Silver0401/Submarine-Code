@@ -66,7 +66,7 @@ def Distancia():
 	
 while True:
 	print Distancia()
-	if Distancia() > 10 and Distancia() :
+	if Distancia() > 10 and Distancia() < 2000:
 		Forward()
 	else:
 		Detenerse()
