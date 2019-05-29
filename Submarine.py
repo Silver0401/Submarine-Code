@@ -58,10 +58,10 @@ def Distancia():
 		print return distancia
 
 	
-
-if Distancia() < 10:
-	Detenerse()
-else:
-	Forward()
+while True:
+	if Distancia() < 10:
+		Detenerse()
+	else:
+		Forward()
 
 
