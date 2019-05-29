@@ -45,6 +45,8 @@ def Detenerse():
 
 def Distancia():
 	init()
+	final = 0
+	inicio = 0
 	while True:
 		gpio.output(9,gpio.LOW)
 		time.sleep(0.5)
