@@ -11,22 +11,24 @@ def init():
 	gpio.setup(26,gpio.OUT)
 	
 
-def Forward():
+def Forward(t):
 	init()
 	gpio.output(6,gpio.LOW)
 	gpio.output(13,gpio.LOW)
 	gpio.output(19,gpio.HIGH)
 	gpio.output(26,gpio.HIGH)
+	time.sleep(t)
 	gpio.cleanup()
 
 
 
-def Backward():
+def Backward(t):
 	init()
 	gpio.output(6,gpio.LOW)
 	gpio.output(13,gpio.LOW)
 	gpio.output(19,gpio.HIGH)
 	gpio.output(26,gpio.HIGH)
+	time.sleep(t)
 	gpio.cleanup()
 
 Forward()
