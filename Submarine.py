@@ -55,7 +55,8 @@ def Distancia():
 		while gpio.input(11) == 1:
 			final= time.time()
 		distancia= ((final-inicio)*34000)/2
-		print return distancia
+		return distancia
+		print distancia
 
 	
 while True:
