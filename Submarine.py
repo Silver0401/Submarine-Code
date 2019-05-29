@@ -3,7 +3,7 @@ import time
 
 def init():
 
-	gpio.setwarning(False)
+
 	gpio.setmode(gpio.BCM)
 
 	gpio.setup(6,gpio.OUT)
