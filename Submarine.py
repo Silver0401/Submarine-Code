@@ -35,6 +35,7 @@ def Backward():
 	gpio.cleanup()
 
 def Detenerse():
+	init()
 
 	gpio.output(6,gpio.LOW)
 	gpio.output(13,gpio.LOW)
