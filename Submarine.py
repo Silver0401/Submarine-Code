@@ -61,10 +61,11 @@ def Distancia():
 			final= time.time()
 		distancia= ((final-inicio)*34000)/2
 		return distancia
-		print distancia
+
 
 	
 while True:
+	print Distancia()
 	if Distancia() > 10 and Distancia() :
 		Forward()
 	else:
