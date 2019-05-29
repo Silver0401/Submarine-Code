@@ -9,6 +9,7 @@ def init():
 	gpio.setup(13,gpio.OUT)
 	gpio.setup(19,gpio.OUT)
 	gpio.setup(26,gpio.OUT)
+
 	gpio.setup(9,gpio.OUT)
 	gpio.setup(11,gpio.IN)
 	
@@ -42,7 +43,20 @@ def Detenerse():
 
 
 def Distancia():
-	return gpio.input(11)
+	while True:
+		gpio.output(9,gpio.LOW)
+		time.sleep(0.5)
+		gpio.output(9,gpio.HIGH)
+		time.sleep(0.0001)
+		gpio.output(9,gpio.LOW)
+		inicio= time.time()
+		while gpio.input(11) ==0:
+			inicio=time.time()
+		while gpio.input(11) == 1:
+			final= time.time()
+		distancia= ((final-inicio)*34000)/2
+		print return distancia
+
 	
 
 if Distancia() < 10:
