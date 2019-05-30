@@ -13,7 +13,8 @@ def init():
 
 	gpio.setup(9,gpio.OUT)
 	gpio.setup(11,gpio.IN)
-	
+
+	gpio.setup(27,gpio.IN)
 
 def Forward():
 	init()
@@ -63,13 +64,21 @@ def Distancia():
 		return distancia
 
 
+def Read_Y():
+	init()
+	y = readChannel(27,gpio.IN)
+	return y 
+
+
+print Read_Y()
+
 	
-while True:
-	print Distancia()
-	if Distancia() > 10 and Distancia() < 2000:
-		Forward()
-	else:
-		Detenerse()
+# while True:
+# 	print Distancia()
+# 	if Distancia() > 10 and Distancia() < 2000:
+# 		Forward()
+# 	else:
+# 		Detenerse()
 
 
 #holo
