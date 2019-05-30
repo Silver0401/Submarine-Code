@@ -1,8 +1,8 @@
 import RPi.GPIO as gpio
 import time
+import picamera
 
 def init():
-
 
 	gpio.setmode(gpio.BCM)
 
@@ -64,14 +64,19 @@ def Distancia():
 		return distancia
 
 
-def Read_Y():
-	init()
-	y = readChannel(27,gpio.IN)
-	return y 
+def Video_Recording():
+	camera = picamera.PiCamera()
+	camera.start_recording("sample_video.h264")
+	time.sleep(5)
+	camera.stop_recording()
+
+def Live_Video():
+	camera = picamera.PiCamera()
+	camera.start_preview()
 
 
-print Read_Y()
 
+Live_Video()
 	
 # while True:
 # 	print Distancia()
