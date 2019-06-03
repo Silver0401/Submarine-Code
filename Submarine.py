@@ -64,9 +64,9 @@ def Distancia():
 		return distancia
 
 
-def Video_Recording():
+def Video_Recording(video_name):
 	camera = picamera.PiCamera()
-	camera.start_recording("sample_video.h264")
+	camera.start_recording(video_name +".h264")
 	time.sleep(5)
 	camera.stop_recording()
 
@@ -75,8 +75,11 @@ def Live_Video():
 	camera.start_preview()
 
 
+def Take_Photo(photo_name):
+	camera = picamera.PiCamera()
+	camera.capture(photo_name + ".jpg")
 
-Live_Video()
+Take_Photo("foto_test")
 	
 # while True:
 # 	print Distancia()
