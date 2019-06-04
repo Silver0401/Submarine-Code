@@ -73,11 +73,16 @@ def Video_Recording(video_name):
 def Live_Video():
 	camera = picamera.PiCamera()
 	camera.start_preview()
+	time.sleep(10)
+	camera.stop_preview()
 
 
 def Take_Photo(photo_name):
+	camera.vflip = True
 	camera = picamera.PiCamera()
 	camera.capture(photo_name + ".jpg")
+
+
 
 Take_Photo("foto_test")
 	
