@@ -73,8 +73,7 @@ def Video_Recording(video_name):
 	camera.stop_recording()
 
 def Live_Video():
-	camera = picamera.PiCamera()
-	
+	# camera = picamera.PiCamera()
 	os.system("raspivid -o - -t 0 -vf -hf -w 600 -h 600 -fps 30 |cvlc -vvv stream:///dev/stdin --sout '#standard{access=http,mux=ts,dst=:8160}' :demux=h264")
 	# camera.start_preview()
 	# time.sleep(10)
@@ -85,8 +84,8 @@ def Take_Photo(photo_name):
 	camera = picamera.PiCamera()
 	camera.capture(photo_name + ".jpg")
 
-
-Live_Video()
+while True:
+	Live_Video()
 	
 # while True:
 # 	print Distancia()
