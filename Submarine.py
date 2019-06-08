@@ -78,7 +78,7 @@ def Live_Video():
 	# time.sleep(10)
 	# camera.stop_preview()
 
-.
+
 def Take_Photo(photo_name):
 	camera = picamera.PiCamera()
 	camera.capture(photo_name + ".jpg")
