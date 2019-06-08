@@ -1,6 +1,7 @@
 import RPi.GPIO as gpio
 import time
 import picamera
+import os
 
 def init():
 
@@ -73,7 +74,7 @@ def Video_Recording(video_name):
 def Live_Video():
 	camera = picamera.PiCamera()
 	
-	raspivid -o - -t 0 -vf -hf -w 600 -h 600 -fps 30 |cvlc -vvv stream:///dev/stdin --sout '#standard{access=http,mux=ts,dst=:8160}' :demux=h264
+	os.system(raspivid -o - -t 0 -vf -hf -w 600 -h 600 -fps 30 |cvlc -vvv stream:///dev/stdin --sout '#standard{access=http,mux=ts,dst=:8160}' :demux=h264)
 	# camera.start_preview()
 	# time.sleep(10)
 	# camera.stop_preview()
