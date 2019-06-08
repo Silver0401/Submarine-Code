@@ -72,13 +72,14 @@ def Video_Recording(video_name):
 
 def Live_Video():
 	camera = picamera.PiCamera()
-	camera.start_preview()
-	time.sleep(10)
-	camera.stop_preview()
+	
+	raspivid -o - -t 0 -vf -hf -w 600 -h 600 -fps 30 |cvlc -vvv stream:///dev/stdin --sout '#standard{access=http,mux=ts,dst=:8160}' :demux=h264
+	# camera.start_preview()
+	# time.sleep(10)
+	# camera.stop_preview()
 
-
+.
 def Take_Photo(photo_name):
-	camera.vflip = True
 	camera = picamera.PiCamera()
 	camera.capture(photo_name + ".jpg")
 
