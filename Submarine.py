@@ -84,7 +84,6 @@ def Take_Photo(photo_name):
 	camera.capture(photo_name + ".jpg")
 
 
-
 Take_Photo("foto_test")
 	
 # while True:
