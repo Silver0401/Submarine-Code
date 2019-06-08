@@ -84,8 +84,8 @@ def Take_Photo(photo_name):
 	camera = picamera.PiCamera()
 	camera.capture(photo_name + ".jpg")
 
-while True:
-	Live_Video()
+
+Live_Video()
 	
 # while True:
 # 	print Distancia()
